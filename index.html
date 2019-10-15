@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Accessibility and JavaScript: An Unconventional Romance</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/sky.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
+    <style>
+      .reveal table {
+        font-size: 2.1rem;
+      }
+      .visually-hidden {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+      }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h1>a11y & JS</h1>
+            <h2>An Unconventional Romance</h2>
+            <p>Lindsey Kopacz</p>
+          </section>
+          <section>
+            <h1>Who am I?</h1>
+          </section>
+          <section>
+            <div style="display: flex;">
+              <img
+                style="margin-right: 3rem"
+                src="img/lindsey-kopacz.png"
+                alt=""
+              />
+              <ul style="align-self: center;">
+                <li class="fragment fade-down">Front End Web Developer</li>
+                <li class="fragment fade-down">
+                  Accessibility Blogger -
+                  <a href="https://www.a11ywithlindsey.com/"
+                    >www.a11ywithlindsey.com</a
+                  >
+                </li>
+                <li class="fragment fade-down">
+                  Podcaster 🐞? <a href="https://ladybug.dev/">ladybug.dev</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <p><strong>Cutting to the chase</strong></p>
+            <p>Why does accessibility matter for your organization?</p>
+          </section>
+          <section>
+            <p>
+              Your org provides a product or service to <strong>people</strong>.
+            </p>
+          </section>
+          <section>
+            <p>Why do I care?</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>The great divide</h2>
+          </section>
+          <section>
+            <img
+              src="img/the-great-divide.png"
+              alt="The Great Divide by Chris Coyier"
+            />
+          </section>
+          <section>
+            <figure>
+              <img src="img/sides.png" alt="" />
+              <figcaption class="visually-hidden">
+                On one side, an army of developers whose interests,
+                responsibilities, and skill sets are heavily revolved around
+                JavaScript. On the other, an army of developers whose interests,
+                responsibilities, and skill sets are focused on other areas of
+                the front end, like HTML, CSS, design, interaction, patterns,
+                accessibility, etc.
+              </figcaption>
+            </figure>
+          </section>
+          <section>
+            <div style="display: flex;">
+              <div>
+                <blockquote
+                  class="twitter-tweet"
+                  data-conversation="none"
+                  data-lang="en"
+                >
+                  <p lang="en" dir="ltr">
+                    Nitpick: I think it would be great to avoid juxtaposing e.g.
+                    “JavaScript” with “accessibility” as if those skillsets were
+                    somehow at odds.
+                    <a href="https://t.co/8OSjWoP2E1"
+                      >pic.twitter.com/8OSjWoP2E1</a
+                    >
+                  </p>
+                  &mdash; Dan Abramov (@dan_abramov)
+                  <a
+                    href="https://twitter.com/dan_abramov/status/1087398276817666048?ref_src=twsrc%5Etfw"
+                    >January 21, 2019</a
+                  >
+                </blockquote>
+                <script
+                  async
+                  src="https://platform.twitter.com/widgets.js"
+                  charset="utf-8"
+                ></script>
+              </div>
+              <p style="margin-left: 3rem; align-self: center;">
+                Tweetstorm ensues...
+              </p>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section>
+            <blockquote class="twitter-tweet" data-lang="en">
+              <p lang="en" dir="ltr">
+                JavaScript isn’t the enemy of accessibility. Instead, the lack
+                of empathy is.
+              </p>
+              &mdash; Lindsey Kopacz 🐞 (@LittleKope)
+              <a
+                href="https://twitter.com/LittleKope/status/1111335590140755968?ref_src=twsrc%5Etfw"
+                >March 28, 2019</a
+              >
+            </blockquote>
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </section>
+          <section>
+            <img
+              src="https://media.giphy.com/media/11tTNkNy1SdXGg/giphy.gif"
+              alt="Head exploding with fire, indicating anger. Clip from the pixar movie Inside out."
+            />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>
+              <a href="https://youtu.be/nQq_gZiZ-jg?t=1421"
+                >How Privilege Defines Performance</a
+              >
+            </h2>
+          </section>
+          <section>
+            <table>
+              <caption>
+                Most common types of WCAG 2 failures:
+                <a href="https://webaim.org/projects/million/">Source</a>
+              </caption>
+              <tbody>
+                <tr>
+                  <th>WCAG Failure Type</th>
+                  <th># of home pages</th>
+                  <th>% of home pages</th>
+                </tr>
+                <tr>
+                  <td>Low contrast text</td>
+                  <td>852,868</td>
+                  <td>85.3%</td>
+                </tr>
+                <tr>
+                  <td>Missing alternative text for images</td>
+                  <td>679,964</td>
+                  <td>68%</td>
+                </tr>
+                <tr>
+                  <td>Empty links</td>
+                  <td>581,408</td>
+                  <td>58.1%</td>
+                </tr>
+                <tr>
+                  <td>Missing form input labels</td>
+                  <td>528,482</td>
+                  <td>52.8%</td>
+                </tr>
+                <tr>
+                  <td>Missing document language</td>
+                  <td>329,612</td>
+                  <td>33.1%</td>
+                </tr>
+                <tr>
+                  <td>Empty buttons</td>
+                  <td>250,367</td>
+                  <td>25%</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <blockquote>
+              "We center the able-bodied and neurotypical experience. We test it
+              for ourselves. We don't consider how it affects everyone else."
+            </blockquote>
+            - <a href="https://twitter.com/TatianaTMac">Tatiana Mac</a>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>How to improve accessibility?</h2>
+            <p>TL;DR Don't be negligent and have 60 errors per page</p>
+          </section>
+          <section>
+            <blockquote class="twitter-tweet" data-lang="en">
+              <p lang="en" dir="ltr">
+                “HTML by default is accessible. And it is our job as engineers
+                to not screw it up.” PREACH,
+                <a href="https://twitter.com/MinaMarkham?ref_src=twsrc%5Etfw"
+                  >@MinaMarkham</a
+                >!<a
+                  href="https://twitter.com/hashtag/aeabos?src=hash&amp;ref_src=twsrc%5Etfw"
+                  >#aeabos</a
+                >
+                <a
+                  href="https://twitter.com/hashtag/a11y?src=hash&amp;ref_src=twsrc%5Etfw"
+                  >#a11y</a
+                >
+              </p>
+              &mdash; Sara Soueidan (@SaraSoueidan)
+              <a
+                href="https://twitter.com/SaraSoueidan/status/1125411839125393410?ref_src=twsrc%5Etfw"
+                >May 6, 2019</a
+              >
+            </blockquote>
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </section>
+          <section>
+            <h2>First: Improve your HTML/CSS Stuff</h2>
+            <ul>
+              <li class="fragment fade-down">
+                Ensure all form inputs have labels
+              </li>
+              <li class="fragment fade-down">
+                &#128248; Ensure there are alt attributes on your images with
+                helpful text (if not decorative)
+              </li>
+              <li class="fragment fade-down">
+                &#128581;&#127996; Don't have empty links or buttons
+              </li>
+              <li class="fragment fade-down">
+                &#127912; Have accessible contrast
+              </li>
+              <li class="fragment fade-down">Have clear focus styling</li>
+            </ul>
+          </section>
+          <section>
+            <h2>To do:</h2>
+            <p>Review the following:</p>
+            <ul>
+              <li class="fragment fade-down">
+                <a href="https://reactjs.org/docs/accessibility.html"
+                  >ReactJS Accessibility Docs</a
+                >
+              </li>
+              <li class="fragment fade-down">
+                <a href="https://webaim.org/standards/wcag/checklist"
+                  >WebAIM's WCAG2 Checklist</a
+                >
+              </li>
+              <li class="fragment fade-down">
+                <a href="https://a11yproject.com/checklist.html"
+                  >A11y Project Checklist</a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Now let's get to javascript</h2>
+          </section>
+          <section>
+            <h2>Modals</h2>
+            <ul>
+              <li class="fragment fade-down">
+                Properly shifting focus to the modal on open
+              </li>
+              <li class="fragment fade-down">
+                "Focus Trapping" - Ensuring that the focus stays in that modal
+                unless you exit
+              </li>
+              <li class="fragment fade-down">
+                Upon close, focus should be moved back to where it was before it
+                moved into the modal.
+              </li>
+              <li class="fragment fade-down">Should close on ESC keypress</li>
+            </ul>
+          </section>
+          <section>
+            <a
+              href="http://bit.ly/react-accessible-modal"
+              target="_blank"
+              rel="noopener noreferrer"
+              >http://bit.ly/react-accessible-modal</a
+            >
+          </section>
+          <section>
+            <h2>Accordions</h2>
+            <ul>
+              <li class="fragment fade-down">
+                Using semantic buttons so click events have built in keyboard
+                handling
+              </li>
+              <li class="fragment fade-down">
+                Ensuring to keep all the sections expanded until JavaScript
+                loads.
+              </li>
+              <li class="fragment fade-down">
+                Then add ARIA expanded and hidden state in addition to styling.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <a
+              href="http://bit.ly/accessible-accordion"
+              target="_blank"
+              rel="noopener noreferrer"
+              >http://bit.ly/accessible-accordion</a
+            >
+          </section>
+          <section>
+            <h2>Overall Focus Management</h2>
+            <ul>
+              <li class="fragment fade-down">
+                Making sure the focus isn't going to invisible elements.
+              </li>
+              <li class="fragment fade-down">
+                Making sure to properly navigate keyboard users where they
+                should go.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <a
+              href="http://bit.ly/js-a11y-tabs"
+              target="_blank"
+              rel="noopener noreferrer"
+              >http://bit.ly/js-a11y-tabs</a
+            >
+          </section>
+          <section>
+            <h2>Creating integration tests</h2>
+            <a
+              href="http://bit.ly/testing-a11y-react-testing"
+              target="_blank"
+              rel="noopener noreferrer"
+              >http://bit.ly/testing-a11y-react-testing</a
+            >
+          </section>
+        </section>
+        <section>
+          <h2>With Great Power, comes great responsibility.</h2>
+        </section>
+        <section>
+          <a href="http://bit.ly/a11y-js-unconventional-romance"
+            >http://bit.ly/a11y-js-unconventional-romance</a
+          >
+        </section>
+        <section>
+          <h2>Questions</h2>
+        </section>
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          { src: "plugin/highlight/highlight.js", async: true }
+        ],
+        hash: true
+      });
+    </script>
+  </body>
+</html>
