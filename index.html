@@ -66,23 +66,11 @@
                     >www.a11ywithlindsey.com</a
                   >
                 </li>
-                <li class="fragment fade-down">
-                  Podcaster 🐞? <a href="https://ladybug.dev/">ladybug.dev</a>
-                </li>
               </ul>
             </div>
           </section>
         </section>
         <section>
-          <section>
-            <p><strong>Cutting to the chase</strong></p>
-            <p>Why does accessibility matter for your organization?</p>
-          </section>
-          <section>
-            <p>
-              Your org provides a product or service to <strong>people</strong>.
-            </p>
-          </section>
           <section>
             <p>Why do I care?</p>
           </section>
@@ -172,13 +160,6 @@
         </section>
         <section>
           <section>
-            <h2>
-              <a href="https://youtu.be/nQq_gZiZ-jg?t=1421"
-                >How Privilege Defines Performance</a
-              >
-            </h2>
-          </section>
-          <section>
             <table>
               <caption>
                 Most common types of WCAG 2 failures:
@@ -223,18 +204,105 @@
               </tbody>
             </table>
           </section>
+          <section><h2>August Update</h2></section>
+          <section>
+            <table>
+              <caption>
+                Most common types of WCAG 2 failures:
+                <a href="https://webaim.org/projects/million/update">Source</a>
+              </caption>
+              <tbody>
+                <tr>
+                  <th>WCAG Failure Type</th>
+                  <th>% of home pages in February</th>
+                  <th>% of home pages in August</th>
+                </tr>
+                <tr>
+                  <td>Low contrast text</td>
+                  <td>85.3%</td>
+                  <td>86.1%</td>
+                </tr>
+                <tr>
+                  <td>Missing alternative text for images</td>
+                  <td>68%</td>
+                  <td>67.9%</td>
+                </tr>
+                <tr>
+                  <td>Empty links</td>
+                  <td>58.1%</td>
+                  <td>58.9%</td>
+                </tr>
+                <tr>
+                  <td>Missing form input labels</td>
+                  <td>52.8%</td>
+                  <td>53.2%</td>
+                </tr>
+                <tr>
+                  <td>Missing document language</td>
+                  <td>33.1%</td>
+                  <td>30.5%</td>
+                </tr>
+                <tr>
+                  <td>Empty buttons</td>
+                  <td>25%</td>
+                  <td>27.0%</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <p>
+              Observations from the same
+              <a href="https://webaim.org/projects/million/update">Source</a>:
+            </p>
+            <p>Increases in errors:</p>
+            <ul>
+              <li class="fragment fade-down">
+                Low contrast text 85.3% ➡️ 86.1%
+              </li>
+              <li class="fragment fade-down">Empty links 58.1% ➡️ 58.9%</li>
+              <li class="fragment fade-down">
+                Missing form input labels 52.8% ➡️ 53.2%
+              </li>
+              <li class="fragment fade-down">Empty buttons 25% ➡️ 27.0%</li>
+            </ul>
+          </section>
+          <section>
+            <h2>4 out of the 6 main categories <strong>got worse</strong></h2>
+          </section>
           <section>
             <blockquote>
-              "We center the able-bodied and neurotypical experience. We test it
-              for ourselves. We don't consider how it affects everyone else."
+              98.0% of homepages had errors in August compared to 97.8% in
+              February
             </blockquote>
-            - <a href="https://twitter.com/TatianaTMac">Tatiana Mac</a>
+          </section>
+          <section>
+            <p>
+              <em
+                >Although, there was a slight decrease of average errors per
+                home page, from 59.7 to 59.1. </em
+              >🤷🏼
+            </p>
+          </section>
+          <section>
+            <blockquote>
+              At the end of the day, JavaScript Frameworks render HTML.
+            </blockquote>
+          </section>
+          <section>
+            <blockquote>
+              JavaScript frameworks don't produce inaccessible HTML. Web
+              developers produce inaccessible HTML.
+            </blockquote>
           </section>
         </section>
         <section>
           <section>
             <h2>How to improve accessibility?</h2>
-            <p>TL;DR Don't be negligent and have 60 errors per page</p>
+            <p>
+              <strong>A good start</strong>: Improve your HTML that your
+              JavaScript renders
+            </p>
           </section>
           <section>
             <blockquote class="twitter-tweet" data-lang="en">
@@ -307,7 +375,7 @@
         </section>
         <section>
           <section>
-            <h2>Now let's get to javascript</h2>
+            <h2>Now let's get to JavaScript</h2>
           </section>
           <section>
             <h2>Modals</h2>
@@ -327,10 +395,7 @@
             </ul>
           </section>
           <section>
-            <a
-              href="http://bit.ly/react-accessible-modal"
-              target="_blank"
-              rel="noopener noreferrer"
+            <a href="http://bit.ly/react-accessible-modal" target="_blank"
               >http://bit.ly/react-accessible-modal</a
             >
           </section>
@@ -351,18 +416,15 @@
             </ul>
           </section>
           <section>
-            <a
-              href="http://bit.ly/accessible-accordion"
-              target="_blank"
-              rel="noopener noreferrer"
-              >http://bit.ly/accessible-accordion</a
+            <a href="http://bit.ly/vanilla-js-accordion" target="_blank"
+              >http://bit.ly/vanilla-js-accordion</a
             >
           </section>
           <section>
             <h2>Overall Focus Management</h2>
             <ul>
               <li class="fragment fade-down">
-                Making sure the focus isn't going to invisible elements.
+                Making sure the focus isn't going to visually hidden elements.
               </li>
               <li class="fragment fade-down">
                 Making sure to properly navigate keyboard users where they
@@ -371,19 +433,53 @@
             </ul>
           </section>
           <section>
-            <a
-              href="http://bit.ly/js-a11y-tabs"
-              target="_blank"
-              rel="noopener noreferrer"
+            <a href="http://bit.ly/js-a11y-tabs" target="_blank"
               >http://bit.ly/js-a11y-tabs</a
             >
           </section>
           <section>
-            <h2>Creating integration tests</h2>
+            <h2>Progressive Enhancement</h2>
+            <ul>
+              <li class="fragment fade-down">
+                Adding a class that gets removed first when JavaScript loads
+              </li>
+              <li class="fragment fade-down">
+                Adding alternative styling if the JavaScript doesn't load
+              </li>
+              <li class="fragment fade-down">
+                Adding aria attributes via JavaScript, especially if it
+                indicates interactivity
+              </li>
+            </ul>
+          </section>
+          <section>
             <a
-              href="http://bit.ly/testing-a11y-react-testing"
+              href="http://bit.ly/accordion-progressive-enhancement"
               target="_blank"
-              rel="noopener noreferrer"
+            >
+              http://bit.ly/accordion-progressive-enhancement
+            </a>
+          </section>
+          <section>
+            <h2>Creating integration tests</h2>
+            <ul>
+              <li class="fragment fadedown">
+                Using jest-axe to get automated testing
+                <strong>integrated</strong> with your integration tests.
+              </li>
+              <li class="fragment fadedown">
+                Testing proper heading structure
+              </li>
+              <li class="fragment fadedown">
+                Testing focus management and interaction.
+              </li>
+              <li class="fragment fadedown">
+                Ensuring IDs match properly with aria attributes.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <a href="http://bit.ly/testing-a11y-react-testing" target="_blank"
               >http://bit.ly/testing-a11y-react-testing</a
             >
           </section>
@@ -395,9 +491,6 @@
           <a href="http://bit.ly/a11y-js-unconventional-romance"
             >http://bit.ly/a11y-js-unconventional-romance</a
           >
-        </section>
-        <section>
-          <h2>Questions</h2>
         </section>
       </div>
     </div>
