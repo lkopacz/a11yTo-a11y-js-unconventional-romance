@@ -122,8 +122,11 @@ We want to ensure that we are not focusing on elements that are not visible. The
 
 Making sure to properly navigate keyboard users where they should go.
 
-<!-- Go to codes -->
-<!--
+- We have a button that opens the menu
+- Then we have a nav in the markup
+- then I just added a test button so we had something focusable for testing purposes
+
+So when we go through this you see that we have multiple tabs before we get to that button. Why? Because we are
 
             </ul> -->
 
