@@ -134,6 +134,11 @@ body {
   display: block;
   margin-left: 40px;
 }
+.twitter {
+  position: fixed;
+  bottom: 0;
+  left: 40%;
+}
 
 .reveal dt {
   font-weight: bold;

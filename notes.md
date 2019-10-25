@@ -6,41 +6,34 @@ Anyways, welcome to my talk: Accessibility and JavaScript: An Unconventional Rom
 
 ## So who the heck am I?
 
-\*Points\* That's a picture of me :D
-
-- I'm a Front End Developer. I actually just hit my 5 year mark officially employed as a developer. I used to work in Drupal for the longest time, but now I am primarily doing React and d3.
-- I'm an accessibility blogger. I started my blog, a11y with Lindsey as a way to take the jargon out of accessibility and encourage web developers to make their internet everybody's internet. I've been writing for over 7 months now and it's been quite a journey to say the least.
-- I'm also a craft beer drinker! If you ever hit up the DC area I have plenty of recommendations!
+- I'm a Front end focused JavaScript Developer. I used to be a UI developer who recently transitioned to being a JavaScript developer after getting my first React project. N ow I am primarily doing React and d3, creating accessible data visualizations.
+- I'm an accessibility blogger. I started my blog, a11y with Lindsey as a way to help web developers who never learned about accessibility what it is and how to implement it. My blog just hit it's one year birthday a few weeks ago!
 
 ## Cutting to the chase
 
-> Why does accessibility matter to your org?
+> Why do I care?
 
-## Your org provides a product or service to people.
-
-That's it. I know there's a lot of business and legal reasons that accessibility matters. But when it comes down to it, you are serving **people**
+> We create products to help people. We don't create products to exclude people.
 
 ## Why do I care about accessibility?
 
-It wasn't until I became an accessibility expert TM [quote unquote] that I really started thinking about how people with disabilities either greatly benefited or were excluded from the products I used everyday. I could go on more about this, but it's a major theme in my talk.
+It wasn't until I became an accessibility focused developer TM [quote unquote] that I really started thinking about how people either greatly benefited or were excluded from the products I used everyday. It wasn't until I started writing my blog that I realized how often cognitive disabilities are ignored. It's personal for me. I personally struggle with ADHD, and sometimes overstimulation causes panic attacks. This year, on April 1st, I went to Stack Overflow as I was googling a question to help me solve a bug, and I had to immediately close down the browser before I had a panic attack because it was exploding in animations and distractions. SO yeah it's pretty important to me.
+
+As my career has evolved, I've learned more and more JavaScript and have been learning how to use it both ethically and inclusively. But I really want to talk a little bit of perceptions that JavaScript and Accessibility are foes.
 
 ## "The Great Divide"
 
-Does anyone remember this article? [checks to see who has]
-
-### if nobody raises their hands
-
-Oh wow! Interesting. Well, to summarize, Chris Coyier wrote it about how there's a large divide between what a "front end developer" is.
+Back in January, Chris Coyier wrong The Great Divide. The subtitle says "Two Front End Developers are sitting at a bar. They have nothing to talk about."
 
 [change slides]
 
 [READ IMAGE IN TWEET]
 
-### Start here
+Does anyone remember the tweet storm that happened afterward? There was a LOT of arguing in the mentions, especially from the JavaScript developers who really really care about accessibility.
 
-Does anyone remember the tweet storm that happened afterward?
+It was at this exact moment that it became clear to me that there are MANY folks in the JavaScript community who deeply care about accessibility. However, putting "accessibility" on the HTML and CSS side of things wasn't completely unfounded. I mean, I started out as a UI developer, and most of the accessibility experts I know focus more on the HTML and CSS side of things.
 
-It was at this exact moment that it became clear to me that there are MANY thought leaders in the JavaScript community who deeply care about accessibility. However, putting "accessibility" on the HTML and CSS side of things wasn't completely unfounded. Some of the worst accessibility issues I've found have been on Progressive Web Apps and Single Page Apps. I've noticed that once I came to the JavaScript side of things, something I found second nature (accessibility) was seen as this magical and mystical thing that only came from learning well written HTML. It's been fascinating for me as someone who was on the HTML/CSS side of things for a long time and is now on the JavaScript side of things.
+Some of the worst accessibility issues I've found have been on Progressive Web Apps and Single Page Apps. I've noticed that once I came to the JavaScript side of things, something I was skilled at (accessibility focused web development) was seen as this magical and mystical thing that only came from learning well written HTML. It's been fascinating for me as someone who was on the HTML/CSS side of things for a long time and is now on the JavaScript side of things.
 
 This whole "conflict" that was probably unintentional about whether JavaScript developers care about accessibility quite honestly defined my whole mission about why I cared about accessibility.
 
@@ -50,54 +43,68 @@ This whole "conflict" that was probably unintentional about whether JavaScript d
 
 As you can see from this tweet, it got a decent amount of attention. It was a bold statement that I've certainly made before, just not on a public platform.
 
-Let's dissect that for a second. When I tweeted this I got a lot of people who were like "Hmmm I don't know, I feel like ignorance is." Lack of knowledge is certainly a problem,but knowledge is something that can be remedied. It's willingly not caring about other people that is the enemy.
+I'd probably rephrase it if I were to rewrite it now, after learning how white women use the word empathy.
 
-The reason I point this out is because I believe Chris's article got wildly misunderstood. JavaScript is not the opposite of accessibility; However, because people skip over HTML so quickly, and a lot of frameworks render **HTML** in the end, there tends to be a lot of absence of accessible HTML.
+However, let's dissect that for a second. When I tweeted this I got a lot of people who were like "Hmmm I don't know, I feel like ignorance is." Lack of knowledge is certainly a problem,but knowledge is something that can be remedied. It's willingly not caring about other people and not trusting their experience is valid...now that is the enemy.
 
-I saw this quote and I think it perfectly illustrates my point.
+JavaScript is not the opposite of accessibility; However, because people skip over HTML so quickly, and a lot of frameworks render **HTML** in the end, there tends to be a lot of absence of accessible HTML.
 
-<!-- The reason that accessibility is on the HTML/CSS side of things is because of how much HTML and CSS gets minimized by JavaScript developers, while simultaneously being told it's incredibly difficult. -->
+Gif alt: The character Anger from inside out, having their head lit on fire from an anger explosion.
 
-## How privilege defines performance
+This is a metaphor for how I felt when I was told I didn't have empathy for web developers because I wanted them to make their apps accessible. OK.
 
-Something I've come across many times is people not even **considering** how something is going to work for someone else. I watched this talk by Tatiana Mac and it moved me to tears. But something she talked about is WebAIMs accessibility analysis of the top million websites. The results are depressingly bad.
+So the WebAIM million has certainly come up many times already, and for good reason because this is an accessibility conference, and this survey reminds us just how inaccessible the web is. But while writing out the rest of this talk I actually remembered that they had an update, and I wondered whether it got better.
 
-59,653,607 distinct accessibility errors were detected across the 1 million home pages—an average of 59.6 errors per page.
-97.8% of home pages had detectable WCAG 2 failures!
+## It didn't
 
-85% for low contrast pages, 52% for missing form labels.
+Sadly 4 out of the 6 main categories got worse.
 
-Do you see these numbers? They are **Abysmal**. Why do we think that is?
+- Low contrast text increased from 85.3 percent to 86.1 percent
+- Empty Links increased from 58.1 percent to 58.9 percent
+- Missing form input labels increased from 52.8 percent to 53.2 percent
+- and Empty buttons increased from 25% to 27%
 
-We center the able-bodied and neurotypical experience. We test it for ourselves. We don't consider how it affects everyone else.
+And 98% of homepages had errors as compared to 97.8% in February.
 
-## How to improve Accessibility?
+Although, there was a **slight** decrease on total errors per page, from 59.7 to 59.1. And there is my shrug emoji because I am not super happy about this update but I guess there's one thing.
 
-TL;DR don't have any of the errors that occurred in the audit since they are low hanging fruit.
+## But Lindsey, isn't this talk about JavaScript
 
-### First IMPROVE YOUR HTML and CSS
+## YES it is.
 
-If at the end of the day, React renders HTML, let's improve our HTML and CSS stuff. Ensure all forms have labels. This can be a visually hidden label, but we need to have a label or an aria-label.
+But at the end of the day, JavaScript frameworks render HTML.
 
-Then we need to ensure that we have alt text, even if it's empty to imply that it's decorative. For example, if you are on a team member's bio page, their photo isn't really necessary for the context of the page - it's decorative.
+And at the end of the day, JavaScript doesn't produce inaccessible HTML. Web Developers produce inaccessible HTML.
 
-Don't have an empty link or a button. There needs to be some form of text for a screenreader to understand, even if it's a visually hidden span that just tells you what that button or link is.
+So the first thing to start with is to learn how your JavaScript framework renders HTML and make sure that rendered HTML is accessible.
 
-Have accessible contrast - we want to account for glare, colorblindness, strained vision, older eyes. etc. Please test your gray on gray type. (btw I did for yours and it passed!)
+## BUT
 
-Have clear focus styling! A lot of times this is just bu **not** removing the default. But sometimes if the default doesn't have enough distinction with the color palette of the site, you can change the outline to be "on brand"
+Accessible HTML isn't always enough, even if it gets you most of the way there.
 
-## Your Homework
+We still have to worry about
 
-Read. The. Docs. I was actually very wowed to see how well documented the React docs were for accessibility. I highly suggest you read them.
+- interactions
+- focus management
+- Using localStorage to store accessibility settings
+- Progressive enhancement
+- Integration testing for complex custom features (which we won't be talking about today but I did want to mention it).
 
-## JavaScript
+Before we jump into JavaScript I want to say that I learned about JavaScript BECAUSE of accessibility, not in spite of it. I had to create a fully accessible language pop up menu that had 27 languages inside it. And I didn't really approach it from a "JavaScripty" mindset. All I did was think, "How do I make this not annoying at all?"
 
-Most errors can be solved with simple HTML fixes. However, what if I told you that so many Accessibility issues **required** JavaScript?
+## But now let's get to the JavaScript
+
+First a few notes:
+I'll be using React in some of these samples, but I won't be going in depth for the sake of time. Here's the TL;DR:
+
+- JSX is a syntax extension to JavaScript that looks VERY similar to HTML. Think of it as a template.
+- JSX that doesn't look like HTML is likely a component
+- Components may have props which are pieces of data.
+- Components might have state, which is data that can change within the component
 
 ## Modals
 
-Accessible modals seem to be something that trip people up. But what does it entail?
+Inaccessible modals suck. Let's just get that out of the way now. Whenever something pops up and you CAN'T EVEN ACCESS THE CONTENT? What gives?
 
 It entails properly shifting focus to the first focusable element when the modal pops up (meaning there should be at least one focusable element).
 
@@ -105,22 +112,19 @@ It entails properly shifting focus to the first focusable element when the modal
 
 Upon Close, the modal should return to the item it was last focused on before the modal opened.
 
-## Accordions
+So let's go through this code a little bit.
 
-Using semantic buttons so click events have built in keyboard handling
-
-Ensuring to keep all the sections expanded (Visually and to a screenreader with aria-expanded) until JavaScript loads.
-
-Then add ARIA states (aria-expanded and aria-hidden) and style toggling.
-
-My latest blog post went deep into the code of how to do accordions in JavaScript. I even do some screen reader demos.
+All of this was done with a React Modal package that is part of the reactjs repository. All I needed to do was include the Modal Component, give it a few props and it works accessibly.
 
 ## Overall Focus Management
 
-So this for me is less about screen reader users and more about keyboard users. We want to ensure that we are not focusing on elements that are not seen. The best example I can think of this is hamburger menus. A lot of times people will be tabbing through the focusable elements without actually knowing where they are because the links are like left: -100%; and then when it's toggled open it's
+We want to ensure that we are not focusing on elements that are not visible. The best example I can think of this is hamburger menus which I'll be showing you in the next example. A lot of times people will be tabbing through the focusable elements without actually knowing where they are because the links positioned off screen.
 
-Making sure to properly navigate keyboard users where they should go. A good exercise is to think about where someone's mouse may normally go if they were i.e. In Spotify, selecting a playlist should shift the focus to that playlist instead of continuing down the other tabs. Because ideally you want to check it out right?
+Making sure to properly navigate keyboard users where they should go.
 
 <!-- Go to codes -->
+<!--
+
+            </ul> -->
 
 WITH GREAT POWER, COMES GREAT RESPONSIBILITY.
